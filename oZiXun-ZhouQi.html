@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>咨询-周期</title>
+    <link rel="stylesheet" type="text/css" href="css/oReset.css">
+    <link rel="stylesheet" type="text/css" href="css/oNormalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/oStylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/oGithub-light.css" media="screen">
+    <link rel="stylesheet" href="css/oDengLu.css">
+    <link rel="stylesheet" href="css/oZiXun.css">
+    <link rel="stylesheet" href="css/oZiXun-ZhouQi.css">
+
+</head>
+
+<body>
+    <header>
+        <a>〈 </a>
+        <p>咨询</p>
+    </header>
+    <div class="zixun">
+        <div class="zixun-container">
+            <p><span>*</span> 项目标题</p>
+            <input type="text" placeholder="请填写项目部标题，25字以内">
+        </div>
+        <div class="zixun-two">
+            <div class="zixun-left">
+                <p><span>*</span> 预算：（万）</p>
+                <input type="text" placeholder="预计投入金额">
+            </div>
+            <div class="zixun-right">
+                <p><span>*</span> 周期：（月）</p>
+                <!-- <input type="text" placeholder="选择项目周期" id="picker1"> -->
+                <div id="picker1" aria-placeholder="选择项目周期" style="font-size: 0.14rem;margin-top:0.06rem;">选择周期</div>
+            </div>
+        </div>
+        <div class="zixun-footer">
+            <p><span>*</span> 项目描述</p>
+            <p>请认真填写您的项目描述，以便我们更好的了解您的需求，与您沟通。</p>
+            <input type="text" placeholder="">
+        </div>
+        <!-- <div class="nbsp-zixun">
+            &nbsp;
+        </div> -->
+
+        <a href="oZhiFu.html" class="enter">提交</a>
+        <div class="teleiphone">
+            <div class="login-go">
+                <h4>电话咨询</h4>
+                <div class="disanfang">
+                    <a class="pic-qq">
+                        <i><img src="images/iphone_03.jpg" alt=""></i>
+                    </a>
+                    <a class="pic-vx">
+                        <i><img src="images/teleipone_05.jpg" alt=""></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div>
+            <div class="footer-bom">
+                <a href="index1.html"> <img src="images/menu_pic1.jpg" alt=""></a>
+                <p><a href="index1.html">质信联盟</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="footer-bom">
+                <a href="anli.html"><img src="images/menu_pic2.jpg" alt=""></a>
+                <p><a href="anli.html">案例</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="footer-bom">
+                <a href="oZiXun-ZhouQi.html"> <img src="images/menu_pic3.jpg" alt=""></a>
+                <p><a href="oZiXun-ZhouQi.html">咨询</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="footer-bom">
+                <a href="my.html"><img src="images/menu_pic4.jpg" alt=""></a>
+                <p><a href="my.html">我的</a></p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+<script src="static/js/picker.min.js"></script>
+<script>
+    var entityState;
+    var data1 = [
+        {
+            text: '一个月以内',
+            value: 1
+        }, {
+            text: '1-3个月',
+            value: 2
+        },
+        {
+            text: '3-6个月',
+            value: 3
+        },
+        {
+            text: '6个月以上',
+            value: 3
+        }
+    ];
+    var picker1El = document.getElementById('picker1');
+    var picker1 = new Picker({
+        data: [data1]
+    });
+
+    picker1.on('picker.select', function (selectedVal, selectedIndex) {
+        picker1El.innerText = data1[selectedIndex[0]].text;
+        entityState = data1[selectedIndex[0]].value;
+    });
+
+    picker1El.addEventListener('click', function () {
+        picker1.show();
+    });
+
+</script>
+
+</html>
